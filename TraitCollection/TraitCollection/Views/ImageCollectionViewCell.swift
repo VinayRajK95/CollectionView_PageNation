@@ -10,11 +10,6 @@ import UIKit
 
 class ImageCollectionViewCell: UICollectionViewCell {
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        imageView.image = nil
-    }
-    
     let imageView : UIImageView = {
         let innerImageView = UIImageView(frame: CGRect.zero)
         innerImageView.contentMode = .scaleAspectFit
@@ -22,7 +17,16 @@ class ImageCollectionViewCell: UICollectionViewCell {
         return innerImageView
     }()
     
+    let containerView: UIView = {
+        let innerView = UIView(frame: CGRect.zero)
+        innerView.translatesAutoresizingMaskIntoConstraints = false
+        innerView.backgroundColor = UIColor.clear
+        return innerView
+    }()
+    
     var constraintsForCell = [NSLayoutConstraint]()
+    
+    fileprivate var subViewDict: [String: AnyObject]!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,9 +39,22 @@ class ImageCollectionViewCell: UICollectionViewCell {
     }
     
     fileprivate func commonInit() {
-        self.addSubview(imageView)
-        constraintsForCell = [imageView.topAnchor.constraint(equalTo: self.topAnchor),imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor),imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor)];
+        self.addSubview(containerView)
+        containerView.addSubview(imageView)
+        subViewDict = ["containerView":containerView,"imageView":imageView]
+        
+        constraintsForCell += NSLayoutConstraint.createConstraint(format:"H:|[containerView]|" ,subViewDict: subViewDict);
+        constraintsForCell += NSLayoutConstraint.createConstraint(format:"V:|[containerView]|" ,subViewDict: subViewDict);
+        
+        constraintsForCell += NSLayoutConstraint.createConstraint(format:"H:|[imageView]|" ,subViewDict: subViewDict);
+        constraintsForCell += NSLayoutConstraint.createConstraint(format:"V:|[imageView]|" ,subViewDict: subViewDict);
+        
         NSLayoutConstraint.activate(constraintsForCell)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
     }
     
 }

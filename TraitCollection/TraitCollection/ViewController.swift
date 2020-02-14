@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     
     fileprivate let networking = Network()
     
-    fileprivate let itemstoFetch = 20;
+    fileprivate let itemstoFetch = 24;
     
     fileprivate var itemsPerRow = 2;
     
@@ -40,8 +40,6 @@ class ViewController: UIViewController {
         }
     }
     
-    fileprivate var subViewDict: [String: AnyObject]!
-    
     fileprivate var boundsChanged: CGRect!
 
     override func viewDidLoad() {
@@ -49,7 +47,6 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor.systemBackground
         boundsChanged = view.bounds
         // Do any additional setup after loading the view.
-        subViewDict = ["collectionViewContainer": collectionViewContainer, "collectionView": collectionView]
         
         setupCollectionView()
         registerCells()
@@ -79,10 +76,6 @@ class ViewController: UIViewController {
     fileprivate func registerCells() {
         collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: "ImageCell")
         collectionView.register(IndicatorCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "IndReUsableView")
-    }
-    
-    fileprivate func createConstraint(format: String) -> [NSLayoutConstraint] {
-        return NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: subViewDict)
     }
 
 }
@@ -186,6 +179,14 @@ extension ViewController {
 
 protocol UpdateCells {
     func configure(imgData: Data)
+}
+
+extension NSLayoutConstraint {
+    
+    public static func createConstraint(format: String, subViewDict: [String: AnyObject]) -> [NSLayoutConstraint] {
+        return NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: subViewDict)
+    }
+    
 }
 
 //extension ViewController: UICollectionViewDataSourcePrefetching {
