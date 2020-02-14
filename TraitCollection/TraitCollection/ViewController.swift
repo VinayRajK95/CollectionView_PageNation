@@ -60,6 +60,14 @@ class ViewController: UIViewController {
 
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if view.bounds != boundsChanged {
+            collectionView.collectionViewLayout.invalidateLayout()
+            view.layoutIfNeeded()
+        }
+    }
+    
     fileprivate func setupCollectionView() {
         view.addSubview(collectionViewContainer)
         collectionViewContainer.addSubview(collectionView)
