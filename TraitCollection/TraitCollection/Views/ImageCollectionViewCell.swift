@@ -12,7 +12,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     let imageView : UIImageView = {
         let innerImageView = UIImageView(frame: CGRect.zero)
-        innerImageView.contentMode = .scaleAspectFit
+        innerImageView.contentMode = .scaleAspectFill
+        innerImageView.layer.cornerRadius = 10
+        innerImageView.layer.masksToBounds = true
         innerImageView.translatesAutoresizingMaskIntoConstraints = false
         return innerImageView
     }()
@@ -21,6 +23,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
         let innerView = UIView(frame: CGRect.zero)
         innerView.translatesAutoresizingMaskIntoConstraints = false
         innerView.backgroundColor = UIColor.clear
+        innerView.layer.shadowColor = UIColor.black.cgColor
+        innerView.layer.shadowOffset = CGSize.zero
+        innerView.layer.shadowOpacity = 0.5
         return innerView
     }()
     
