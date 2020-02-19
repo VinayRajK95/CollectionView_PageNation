@@ -9,7 +9,7 @@
 import UIKit
 
 class IndicatorCollectionReusableView: UICollectionReusableView {
-    var activityIndicator: UIActivityIndicatorView!
+    var webLoaderView: WebLoader!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,13 +22,13 @@ class IndicatorCollectionReusableView: UICollectionReusableView {
     }
     
     fileprivate func commonInit() {
-        activityIndicator = UIActivityIndicatorView()
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        webLoaderView = WebLoader()
+        webLoaderView.translatesAutoresizingMaskIntoConstraints = false
         setupIndicator()
     }
     
     func setupIndicator() {
-        self.addSubview(activityIndicator)
-        NSLayoutConstraint.activate([activityIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor),activityIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor)])
+        self.addSubview(webLoaderView)
+        NSLayoutConstraint.activate([webLoaderView.centerYAnchor.constraint(equalTo: self.centerYAnchor),webLoaderView.centerXAnchor.constraint(equalTo: self.centerXAnchor)])
     }
 }

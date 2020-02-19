@@ -160,7 +160,7 @@ extension ViewController {
         switch kind {
         case UICollectionView.elementKindSectionFooter:
             let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "IndReUsableView", for: indexPath)
-            (footerView as? IndicatorCollectionReusableView)?.activityIndicator.startAnimating()
+            (footerView as? IndicatorCollectionReusableView)?.webLoaderView.startAnimation()
             return footerView
         default:
             assert(false, "Unexpected element kind")
