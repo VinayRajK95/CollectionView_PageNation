@@ -58,7 +58,7 @@ class WebLoader: UIView {
     }
     
     convenience init() {
-        self.init(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+        self.init(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
     }
     
     fileprivate  func commonInit() {

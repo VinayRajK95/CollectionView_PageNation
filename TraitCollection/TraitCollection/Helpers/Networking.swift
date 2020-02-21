@@ -18,7 +18,7 @@ class Network {
         let url = URL(string: api)
         guard let url1 = url else { return }
         let dispatchGroup = DispatchGroup()
-        for _ in 0..<items {
+        DispatchQueue.concurrentPerform(iterations: items) { (_) in
             dispatchGroup.enter()
             session.dataTask(with: url1) { (data, response, error) in
                 guard let data = data else { return }
