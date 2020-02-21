@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		704BC19E23F6BFD800EAA089 /* readME.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 704BC19D23F6BFD800EAA089 /* readME.rtf */; };
-		704BC1A023F6BFE200EAA089 /* Coll_trait.mov in Resources */ = {isa = PBXBuildFile; fileRef = 704BC19F23F6BFE200EAA089 /* Coll_trait.mov */; };
 		704FE7FC23F6619D00C51627 /* IndicatorCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FE7FB23F6619D00C51627 /* IndicatorCollectionReusableView.swift */; };
 		704FE80223F661F300C51627 /* UIUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704FE80123F661F300C51627 /* UIUtils.swift */; };
 		70AD982023F51FDE0098FBA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD981F23F51FDE0098FBA9 /* AppDelegate.swift */; };
@@ -20,11 +18,10 @@
 		70AD983723F521820098FBA9 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD983623F521820098FBA9 /* Networking.swift */; };
 		70AD983923F53E160098FBA9 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD983823F53E160098FBA9 /* ImageCollectionViewCell.swift */; };
 		70AD983B23F541450098FBA9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70AD983A23F541450098FBA9 /* Model.swift */; };
+		70D5301523FE9CEB00D5A8AE /* WebLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D5301423FE9CEB00D5A8AE /* WebLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		704BC19D23F6BFD800EAA089 /* readME.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = readME.rtf; path = ../../../../Documents/readME.rtf; sourceTree = "<group>"; };
-		704BC19F23F6BFE200EAA089 /* Coll_trait.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Coll_trait.mov; path = ../../../Coll_trait.mov; sourceTree = "<group>"; };
 		704FE7FB23F6619D00C51627 /* IndicatorCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorCollectionReusableView.swift; sourceTree = "<group>"; };
 		704FE80123F661F300C51627 /* UIUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtils.swift; sourceTree = "<group>"; };
 		70AD981C23F51FDE0098FBA9 /* TraitCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TraitCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +35,7 @@
 		70AD983623F521820098FBA9 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		70AD983823F53E160098FBA9 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		70AD983A23F541450098FBA9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		70D5301423FE9CEB00D5A8AE /* WebLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +60,7 @@
 		704FE7FF23F661B200C51627 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				70D5301423FE9CEB00D5A8AE /* WebLoader.swift */,
 				70AD983823F53E160098FBA9 /* ImageCollectionViewCell.swift */,
 				704FE7FB23F6619D00C51627 /* IndicatorCollectionReusableView.swift */,
 			);
@@ -106,8 +105,6 @@
 				70AD982D23F51FF60098FBA9 /* LaunchScreen.storyboard */,
 				70AD983023F51FF60098FBA9 /* Info.plist */,
 				70AD982823F51FDF0098FBA9 /* TraitCollection.xcdatamodeld */,
-				704BC19F23F6BFE200EAA089 /* Coll_trait.mov */,
-				704BC19D23F6BFD800EAA089 /* readME.rtf */,
 			);
 			path = TraitCollection;
 			sourceTree = "<group>";
@@ -170,10 +167,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				704BC19E23F6BFD800EAA089 /* readME.rtf in Resources */,
 				70AD982F23F51FF60098FBA9 /* LaunchScreen.storyboard in Resources */,
 				70AD982C23F51FF60098FBA9 /* Assets.xcassets in Resources */,
-				704BC1A023F6BFE200EAA089 /* Coll_trait.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +186,7 @@
 				70AD982423F51FDE0098FBA9 /* ViewController.swift in Sources */,
 				70AD982023F51FDE0098FBA9 /* AppDelegate.swift in Sources */,
 				704FE80223F661F300C51627 /* UIUtils.swift in Sources */,
+				70D5301523FE9CEB00D5A8AE /* WebLoader.swift in Sources */,
 				70AD982223F51FDE0098FBA9 /* SceneDelegate.swift in Sources */,
 				704FE7FC23F6619D00C51627 /* IndicatorCollectionReusableView.swift in Sources */,
 			);

@@ -101,9 +101,9 @@ class WebLoader: UIView {
     
     fileprivate func createAnimation(interval: [CFTimeInterval]) -> CAKeyframeAnimation {
         let animator = CAKeyframeAnimation(keyPath: "backgroundColor")
-        animator.values = [UIColor.cyan.cgColor,
-                           UIColor.blue.cgColor,
-                           UIColor.cyan.cgColor]
+        animator.values = [UIColor.lightGray.cgColor,
+                           UIColor.gray.cgColor,
+                           UIColor.lightGray.cgColor]
         animator.keyTimes = interval as [NSNumber]
         animator.duration = 0.8
         animator.fillMode = .forwards
@@ -142,7 +142,7 @@ class CircularView: UIView {
     
     fileprivate func commonInit() {
         self.layoutSubviews()
-        self.backgroundColor = UIColor.cyan
+        self.backgroundColor = UIColor.lightGray
     }
     
     override func layoutSubviews() {
