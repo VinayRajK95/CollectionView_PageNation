@@ -63,6 +63,7 @@ class ViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if view.bounds != boundsChanged {
+            boundsChanged = view.bounds
             collectionView.collectionViewLayout.invalidateLayout()
             view.layoutIfNeeded()
         }
